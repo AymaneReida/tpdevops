@@ -1,0 +1,12 @@
+README.md
+.git/
+.gitignore
+.idea/
+*.iml
+*.iws
+target/
+.sonar/
+.sonarlint/
+Dockerfile
+Jenkinsfile
+.dockerignore
