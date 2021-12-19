@@ -38,8 +38,7 @@ pipeline {
      // Stopping Docker containers for cleaner Docker run
      stage('docker stop container') {
          steps {
-            sh 'docker ps -f name=myrepoContainer -q | xargs -r docker container stop'
-            sh 'docker container ls -aq -f name=myrepoContainer | xargs -r docker container rm'
+            sh 'docker container ls -aq -f name=myrepoContainer | xargs -r docker container stop'
          }
        }
 
