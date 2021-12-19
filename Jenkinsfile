@@ -39,7 +39,7 @@ pipeline {
      stage('docker stop container') {
          steps {
             sh 'docker ps -f name=myrepoContainer -q | xargs -r docker container stop'
-            sh 'docker container ls -a -fname=myrepoContainer -q | xargs -r docker container rm'
+            sh 'docker container ls -aq -f name=myrepoContainer | xargs -r docker container rm'
          }
        }
 
