@@ -5,7 +5,7 @@ pipeline {
         //once you sign up for Docker hub, use that user_id here
         registry = "aymaner/tpdevops"
         //- update your credentials ID after creating credentials for connecting to Docker Hub
-        registryCredential = ''
+        registryCredential = 'bedca4c5-3fcc-41fa-9d6d-1baabfd0d1ca	'
         dockerImage = ''
     }
 
