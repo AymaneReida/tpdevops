@@ -3,18 +3,13 @@ pipeline {
 
     environment {
         //once you sign up for Docker hub, use that user_id here
-        registry = "user_id/repo"
+        registry = "aymaner/tpdevops"
         //- update your credentials ID after creating credentials for connecting to Docker Hub
         registryCredential = ''
         dockerImage = ''
     }
 
     stages {
-        stage('Cloning Git') {
-            steps {
-            }
-        }
-
     // Building Docker images
     stage('Building image') {
       steps{
