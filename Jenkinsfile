@@ -3,10 +3,10 @@ pipeline {
 
     environment {
         //once you sign up for Docker hub, use that user_id here
-        REGESTRY = "aymaner/tpdevops"
+        registry = "aymaner/tpdevops"
         //- update your credentials ID after creating credentials for connecting to Docker Hub
-        REGESTRYCREDENTIAL = 'bedca4c5-3fcc-41fa-9d6d-1baabfd0d1ca'
-        DOCKERIMAGE = ''
+        registryCredential = 'bedca4c5-3fcc-41fa-9d6d-1baabfd0d1ca'
+        dockerImage = ''
     }
 
     stages {
@@ -14,7 +14,7 @@ pipeline {
     stage('Building image') {
       steps{
         script {
-          myapp = docker.build(env.REGESTRY)
+          dockerImage = docker.build registry
         }
       }
     }
@@ -23,8 +23,8 @@ pipeline {
     stage('Upload Image') {
      steps{
          script {
-            docker.withRegistry( 'https://registry.hub.docker.com', env.REGESTRYCREDENTIAL ) {
-            myapp.push()
+            docker.withRegistry( '', registryCredential ) {
+            dockerImage.push()
             }
         }
       }
